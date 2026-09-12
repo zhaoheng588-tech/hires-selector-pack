@@ -1,0 +1,465 @@
+{
+  "title": {
+    "label": "标题",
+    "group": "copy",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#productTitle"
+      },
+      {
+        "type": "selector",
+        "sel": "#title_feature_div h1, h1#title"
+      },
+      {
+        "type": "jsonLd",
+        "path": "name"
+      },
+      {
+        "type": "meta",
+        "name": "og:title"
+      }
+    ]
+  },
+  "bullets": {
+    "label": "五点描述",
+    "group": "copy",
+    "multi": true,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#feature-bullets li span.a-list-item",
+        "join": "\n"
+      },
+      {
+        "type": "selector",
+        "sel": "#feature_bullets_feature_div li span.a-list-item",
+        "join": "\n"
+      },
+      {
+        "type": "selector",
+        "sel": "#feature-bullets ul li",
+        "join": "\n"
+      },
+      {
+        "type": "selector",
+        "sel": "#fbExpandableContent li",
+        "join": "\n"
+      }
+    ]
+  },
+  "description": {
+    "label": "商品描述",
+    "group": "copy",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#productDescription",
+        "strip": [
+          "\n"
+        ]
+      },
+      {
+        "type": "selector",
+        "sel": "#productDescription_feature_div .a-expander-content",
+        "strip": [
+          "\n"
+        ]
+      },
+      {
+        "type": "selector",
+        "sel": "#aplus .aplus-module",
+        "join": " ",
+        "strip": [
+          "\n"
+        ]
+      },
+      {
+        "type": "jsonLd",
+        "path": "description"
+      }
+    ]
+  },
+  "brand": {
+    "label": "品牌",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "brand",
+          "品牌"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "selector",
+        "sel": "#bylineInfo"
+      },
+      {
+        "type": "jsonLd",
+        "path": "brand.name"
+      },
+      {
+        "type": "jsonLd",
+        "path": "brand"
+      }
+    ]
+  },
+  "manufacturer": {
+    "label": "制造商",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "manufacturer",
+          "制造商",
+          "生产商"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "jsonLd",
+        "path": "manufacturer.name"
+      }
+    ]
+  },
+  "categoryPath": {
+    "label": "类目路径",
+    "group": "identity",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#wayfinding-breadcrumbs_feature_div a, #wayfinding-breadcrumbs_container a",
+        "join": " › "
+      },
+      {
+        "type": "selector",
+        "sel": ".a-breadcrumb a",
+        "join": " › "
+      },
+      {
+        "type": "jsonLd",
+        "path": "category"
+      }
+    ]
+  },
+  "asin": {
+    "label": "ASIN",
+    "group": "identity",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "asin",
+          "商品编号"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails"
+      },
+      {
+        "type": "selector",
+        "sel": "#ASIN",
+        "attr": "value"
+      },
+      {
+        "type": "selector",
+        "sel": "input#ASIN, input[name=ASIN]",
+        "attr": "value"
+      },
+      {
+        "type": "embedded",
+        "scope": "#twister, body",
+        "key": "asin"
+      }
+    ]
+  },
+  "upc": {
+    "label": "UPC / EAN / GTIN",
+    "group": "identity",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "upc",
+          "ean",
+          "gtin",
+          "global trade identification number"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "jsonLd",
+        "path": "gtin13"
+      },
+      {
+        "type": "jsonLd",
+        "path": "gtin"
+      },
+      {
+        "type": "jsonLd",
+        "path": "gtin12"
+      }
+    ]
+  },
+  "modelNumber": {
+    "label": "型号",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "item model number",
+          "model number",
+          "型号",
+          "model name"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "jsonLd",
+        "path": "model"
+      },
+      {
+        "type": "jsonLd",
+        "path": "mpn"
+      }
+    ]
+  },
+  "dimensions": {
+    "label": "尺寸",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "product dimensions",
+          "item dimensions",
+          "package dimensions",
+          "商品尺寸",
+          "产品尺寸"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "jsonLd",
+        "path": "size"
+      },
+      {
+        "type": "jsonLd",
+        "path": "depth"
+      }
+    ]
+  },
+  "weight": {
+    "label": "重量",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "item weight",
+          "product weight",
+          "商品重量",
+          "产品重量",
+          "shipping weight"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "jsonLd",
+        "path": "weight"
+      }
+    ]
+  },
+  "color": {
+    "label": "颜色 / 材质",
+    "group": "spec",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "detailRow",
+        "labels": [
+          "color",
+          "colour",
+          "颜色",
+          "material",
+          "材质"
+        ],
+        "scope": "#detailBullets_feature_div, #productDetails_detailBullets_sections1, #prodDetails, #productDetails_techSpec_section_1"
+      },
+      {
+        "type": "selector",
+        "sel": "#variation_color_name .selection"
+      },
+      {
+        "type": "jsonLd",
+        "path": "color"
+      }
+    ]
+  },
+  "price": {
+    "label": "价格",
+    "group": "commerce",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#corePriceDisplay_desktop_feature_div .a-price .a-offscreen"
+      },
+      {
+        "type": "selector",
+        "sel": "#corePrice_feature_div .a-price .a-offscreen"
+      },
+      {
+        "type": "selector",
+        "sel": "#priceblock_ourprice, #priceblock_dealprice, #priceblock_saleprice"
+      },
+      {
+        "type": "selector",
+        "sel": ".a-price[data-a-color=base] .a-offscreen"
+      },
+      {
+        "type": "jsonLd",
+        "path": "offers.price"
+      },
+      {
+        "type": "jsonLd",
+        "path": "offers.lowPrice"
+      }
+    ]
+  },
+  "listPrice": {
+    "label": "划线价",
+    "group": "commerce",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": ".basisPrice .a-offscreen, #listPrice, .a-text-price[data-a-strike=true] .a-offscreen"
+      },
+      {
+        "type": "selector",
+        "sel": "#corePriceDisplay_desktop_feature_div .a-text-price .a-offscreen"
+      }
+    ]
+  },
+  "availability": {
+    "label": "库存状态",
+    "group": "commerce",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#availability .a-color-success, #availability .a-color-price, #availability"
+      },
+      {
+        "type": "jsonLd",
+        "path": "offers.availability"
+      },
+      {
+        "type": "selector",
+        "sel": "#outOfStock"
+      }
+    ]
+  },
+  "seller": {
+    "label": "卖家 / 配送",
+    "group": "commerce",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "[offer-display-feature-name=\"desktop-merchant-info\"] .offer-display-feature-text-message"
+      },
+      {
+        "type": "selector",
+        "sel": "#sellerProfileTriggerId"
+      },
+      {
+        "type": "detailRow",
+        "labels": [
+          "sold by",
+          "seller",
+          "卖家",
+          "shipper",
+          "ships from"
+        ],
+        "scope": "#tabular-buybox, #detailBullets_feature_div, #productDetails_detailBullets_sections1"
+      },
+      {
+        "type": "selector",
+        "sel": "#merchant-info a, #merchant-info"
+      },
+      {
+        "type": "selector",
+        "sel": "#merchantInfoFeature_feature_div .offer-display-feature-text-message"
+      },
+      {
+        "type": "selector",
+        "sel": "#tabular-buybox .tabular-buybox-text",
+        "join": " · "
+      },
+      {
+        "type": "selector",
+        "sel": "#fulfillerInfoFeature_feature_div"
+      },
+      {
+        "type": "selector",
+        "sel": "#aod-offer-soldBy .a-size-base, #aod-offer-soldBy"
+      }
+    ]
+  },
+  "rating": {
+    "label": "评分 / 评分数",
+    "group": "commerce",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#acrPopover",
+        "attr": "title"
+      },
+      {
+        "type": "selector",
+        "sel": "#averageCustomerReviews .a-icon-alt"
+      },
+      {
+        "type": "jsonLd",
+        "path": "aggregateRating.ratingValue"
+      }
+    ]
+  },
+  "variantSummary": {
+    "label": "变体关系",
+    "group": "identity",
+    "multi": false,
+    "strategies": [
+      {
+        "type": "selector",
+        "sel": "#twister .a-row .selection, #twister_feature_div .a-row .selection",
+        "join": " / "
+      },
+      {
+        "type": "selector",
+        "sel": "#variation_color_name .selection, #variation_size_name .selection",
+        "join": " / "
+      },
+      {
+        "type": "selector",
+        "sel": "#twister",
+        "attr": "data-defaultasin"
+      }
+    ]
+  }
+}

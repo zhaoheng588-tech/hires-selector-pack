@@ -1,0 +1,32 @@
+{
+  "selectors": {
+    "version": "2026-09-12.1",
+    "fields": {},
+    "marketplaces": {},
+    "_example": {
+      "note": "把你确实要改的字段从 selector-pack.reference.json 拷进 fields 再改；远端规则插在内置规则前面，写错也只是多一次失败尝试，内置链仍兜底。",
+      "fields": {
+        "title": {
+          "strategies": [
+            {
+              "type": "selector",
+              "sel": "#productTitle"
+            }
+          ]
+        }
+      },
+      "marketplaces": {
+        "amazon.com": {
+          "title": {
+            "strategies": [
+              {
+                "type": "selector",
+                "sel": "#productTitle"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
