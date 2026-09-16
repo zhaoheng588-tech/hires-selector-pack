@@ -1,0 +1,109 @@
+<!doctype html>
+<!-- HiRes 官网落地页 · 纯静态零依赖(不引外部 JS/CSS,商店合规与速度都最好) -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HiRes — Product Image Downloader for Amazon sellers</title>
+<meta name="description" content="Download original product images, SKU galleries, videos & CSV exports right on the product page. One-time Pro, no account.">
+<style>
+:root{--bg:#0b0f1a;--fg:#e8edf7;--sub:#9aa7bd;--line:rgba(255,255,255,.09);--acc:#6ea8ff;--acc2:#5ad1c8;--card:#111827}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.65 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,rgba(110,168,255,.14),transparent),radial-gradient(900px 500px at 5% 5%,rgba(90,209,200,.10),transparent),var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:15px}
+.logo{font-weight:700;font-size:18px;color:var(--fg);letter-spacing:.2px}
+.logo small{color:var(--sub);font-weight:400}
+header{text-align:center;padding:64px 0 40px}
+header h1{font-size:44px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+header h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+p.lead{color:var(--sub);font-size:19px;margin:18px auto 30px;max-width:640px}
+.cta{display:inline-flex;gap:12px;align-items:center}
+.btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:600;font-size:16px;border:0;cursor:pointer;margin:0 6px}
+.btn.pri{background:linear-gradient(90deg,#4f7dff,#6ea8ff);color:#fff;box-shadow:0 6px 24px rgba(79,125,255,.35)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.mock{margin:36px auto 0;max-width:880px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#101828,#0c1220);padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.bar{display:flex;gap:6px;padding:2px 6px 12px}.bar i{width:10px;height:10px;border-radius:50%;background:#2a3550}
+.mockbody{display:grid;grid-template-columns:120px repeat(6,1fr);gap:10px}
+.tile{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,#1b2946,#22355c);position:relative}
+.tile.vs::after{content:"2000px";position:absolute;right:6px;bottom:4px;color:var(--acc2);font-size:9px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:56px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h3{font-size:17px;margin:12px 0 8px}
+.card p{color:var(--sub);font-size:14.5px}
+.ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:19px;background:linear-gradient(135deg,rgba(110,168,255,.18),rgba(90,209,200,.18))}
+.price{text-align:center;padding:58px 0}
+.price h2{font-size:32px}
+.box{max-width:460px;margin:30px auto;border:1px solid rgba(110,168,255,.35);background:linear-gradient(180deg,rgba(79,125,255,.10),transparent);border-radius:18px;padding:34px}
+.amount{font-size:48px;font-weight:800}.amount small{font-size:15px;color:var(--sub)}
+ul.feat{list-style:none;margin:20px 0 26px;text-align:left}
+ul.feat li{padding:7px 0;color:var(--fg);font-size:15px}
+ul.feat li::before{content:"✓ ";color:var(--acc2);font-weight:700}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--sub);font-size:13.5px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.faq{padding:40px 0 64px}.faq h2{font-size:30px;text-align:center;margin-bottom:28px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--sub);font-size:14.5px;margin-top:10px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}header h1{font-size:32px}.mockbody{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><span class="logo">HiRes <small>for Amazon &amp; more</small></span><span><a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a></span></nav>
+<header>
+  <h1>Original product images.<br>One click, <em>right on the page.</em></h1>
+  <p class="lead">Grab original-resolution main images, every SKU photo, detail shots and listing CSVs while you are browsing the product page. No account. Built for dropshippers and Amazon sellers.</p>
+  <a class="btn pri" id="storeLink">Install from the Chrome Web Store</a>
+  <a class="btn ghost" href="#pricing">See pricing — $19 once</a>
+  <div class="mock">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="mockbody">
+      <span></span>
+      <div class="tile vs"></div><div class="tile vs"></div><div class="tile"></div><div class="tile vs"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile vs"></div><div class="tile"></div><div class="tile vs"></div><div class="tile"></div>
+    </div>
+  </div>
+</header>
+<div class="grid">
+  <div class="card"><div class="ic">🖼️</div><h3>Original resolution only</h3><p>Sizes are the values the CDN declared — not the squeezed thumbnails. Ready for Amazon's 1000px listing rule.</p></div>
+  <div class="card"><div class="ic">🧬</div><h3>Every SKU, one click</h3><p>Color and size galleries land as separate files with SKU-aware naming and folder structure.</p></div>
+  <div class="card"><div class="ic">🎬</div><h3>Product videos too</h3><p>Story videos attached to the product, deduplicated across encodings, with the file extension they actually are.</p></div>
+  <div class="card"><div class="ic">📊</div><h3>Listing CSV / Excel</h3><p>One row per SKU, attributes split into importable columns — Shopify / seller tools ready.</p></div>
+  <div class="card"><div class="ic">🔒</div><h3>Local by design</h3><p>No account, no cloud sync, no analytics. Your queue lives in your browser, and the ZIP packs locally.</p></div>
+  <div class="card"><div class="ic">🛠️</div><h3>Adapts to page changes</h3><p>Reading rules refresh automatically, so sweeps and layout changes do not break your day.</p></div>
+</div>
+<div class="price" id="pricing">
+  <h2>Simple pricing</h2>
+  <div class="box">
+    <div class="amount">$19 <small>one-time, forever</small></div>
+    <ul class="feat">
+      <li>Unlimited images and products</li>
+      <li>Every SKU's full gallery (deep collect)</li>
+      <li>ZIP packaging &amp; per-SKU folders</li>
+      <li>Unified resizing &amp; JPEG quality</li>
+      <li>WeChat Pay, cards, Apple / Google Pay</li>
+    </ul>
+    <a class="btn pri" id="pricingstoreLink" style="width:100%">Install the extension</a>
+    <p style="color:var(--sub);font-size:13px;margin-top:14px">The free plan is generous: unlimited product images, unlimited products, listing table with generic columns. Pro unlocks ZIP, deep collect and resizing.</p>
+  </div>
+</div>
+<div class="faq" id="faq">
+  <h2>FAQ</h2>
+  <details open><summary>Does it log in anywhere?</summary><p>No. Nothing to sign up. Payments are one-time through the extension; your license key is stored locally and verified offline with a cryptographic signature.</p></details>
+  <details><summary>Which sites are supported?</summary><p>Amazon, AliExpress, Shopee, Lazada, Temu and Etsy product pages. Nothing is installed on the sites; the extension only reads images on pages you open.</p></details>
+  <details><summary>Do I keep a license after paying?</summary><p>Yes — the checkout page shows an activation code. Pay, copy the code, paste it in Settings → Pro. Or just enter the email you paid with and the code is fetched for you.</p></details>
+  <details><summary>Will it survive website redesigns?</summary><p>The reading rules are data, shipped from our server and updated about every 6 hours when pages change — no extension update needed.</p></details>
+</div>
+<footer>
+  <span>HiRes — runs entirely in your browser, no telemetry.</span>
+  <span>Support: <a href="mailto:support@facailo.xyz">support@facailo.xyz</a> · <a id="storeLink2">Chrome Web Store</a></span>
+</footer>
+</div>
+<script>
+// 商店链接统一一处;未上架前先指商店首页,上架后换成正式 URL
+const STORE = "https://chromewebstore.google.com/";
+for (const id of ["storeLink","pricingstoreLink","storeLink2"]){ const a=document.getElementById(id); if(a) a.href = STORE; }
+</script>
+</body>
+</html>
